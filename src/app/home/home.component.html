@@ -1,0 +1,73 @@
+<section class="section d-flex flex-column">
+  <p class="fs-4 fw-5">Add a new user</p>
+  <form [formGroup]="HomeForm">
+    <div class="mb-3">
+      <label class="form-label"
+        >First name
+        <span
+          *ngIf="
+            HomeForm.get('firstName')?.touched &&
+            HomeForm.get('firstName')?.invalid
+          "
+          class="text-danger"
+          >*</span
+        ></label
+      >
+      <input type="text" class="form-control" formControlName="firstName" />
+    </div>
+    <div class="mb-3">
+      <label
+        >Last name<span
+          *ngIf="
+            HomeForm.get('lastName')?.touched &&
+            HomeForm.get('lastName')?.invalid
+          "
+          class="text-danger"
+          >*</span
+        ></label
+      >
+      <input type="text" class="form-control" formControlName="lastName" />
+    </div>
+    <div class="mb-3">
+      <label
+        >Age<span
+          *ngIf="HomeForm.get('age')?.touched && HomeForm.get('age')?.invalid"
+          class="text-danger"
+          >*</span
+        ></label
+      >
+      <input type="number" class="form-control" formControlName="age" min="1" />
+    </div>
+    <div>
+      <label>Gender </label>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          formControlName="gender"
+          value="Male"
+        />
+        <label class="form-check-label" for="flexRadioDefault1"> Male </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="radio"
+          formControlName="gender"
+          value="Female"
+        />
+        <label class="form-check-label" for="flexRadioDefault1"> Female </label>
+      </div>
+    </div>
+    <br />
+    <button
+      type="button"
+      class=" btn btn-primary"
+      (click)="onSubmit()"
+    >
+      Create User
+    </button>
+  </form>
+
+  <app-user-table class="table table-striped"></app-user-table>
+</section>

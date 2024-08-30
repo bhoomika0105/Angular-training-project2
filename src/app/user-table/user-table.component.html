@@ -1,0 +1,18 @@
+<table class="table">
+    <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">First name</th>
+          <th scope="col">Last name</th>
+          <th scope="col">Age</th>
+          <th scope="col">Gender</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let value of values; let i= index ">
+        <td>{{i+1}}</td>
+        <td scope="col">{{value.firstName}}</td>
+        <td scope="col">{{value.lastName}}</td>
+        <td scope="col">{{value.age}}</td>
+        <td scope="col">{{value.gender}}</td>
+      </tbody>
+</table>
