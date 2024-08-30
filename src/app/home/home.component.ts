@@ -42,9 +42,9 @@ export class HomeComponent implements OnInit {
     });
   }
   onSubmit() {
-    // Object.keys(this.HomeForm.controls).forEach((controlName) => {
-    //   this.HomeForm.get(controlName)?.markAllAsTouched();
-    // });
+    Object.keys(this.HomeForm.controls).forEach((controlName) => {
+      this.HomeForm.get(controlName)?.markAllAsTouched();
+    });
 
     if (this.HomeForm.valid) {
       const user = this.HomeForm.value;
